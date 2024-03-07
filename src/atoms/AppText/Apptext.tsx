@@ -3,8 +3,8 @@ import React from 'react';
 import {fontFamily} from '../../utils/theme/fontFamily';
 import {getFontSize} from '../../utils/theme/fontScale';
 
-type AppTextProps = TextProps;
-const Apptext = ({children, ...props}: AppTextProps) => {
+type ApptextProps = TextProps;
+const Apptext = ({children, ...props}: ApptextProps) => {
   return (
     <Text
       style={[

@@ -3,8 +3,11 @@ import React from 'react';
 import Apptext from '../../atoms/AppText/Apptext';
 import {styles} from './LandingScreenStyles';
 import AppButton from '../../atoms/AppButton/AppButton';
+import {UnAuthenticatedNavProps} from '../../navigations/UnAuthenticatedNavigation/UnAuthenticatedNavigationTypes';
 
-const LandingScreen = () => {
+const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
+  navigation,
+}) => {
   return (
     <View style={styles.mainContainer}>
       <Image
@@ -16,7 +19,12 @@ const LandingScreen = () => {
         <Apptext style={styles.name}>Foodee</Apptext>
         <Apptext style={styles.subHeading}>Create your food journey</Apptext>
         <View style={styles.btnContainer}>
-          <AppButton>Create Account</AppButton>
+          <AppButton
+            onPress={() => {
+              navigation.navigate('SignupScreen');
+            }}>
+            Create Account
+          </AppButton>
           <View style={styles.infoContainer}>
             <Apptext style={styles.info}>Already have an account? </Apptext>
             <Apptext style={styles.actionInfo}>Login</Apptext>

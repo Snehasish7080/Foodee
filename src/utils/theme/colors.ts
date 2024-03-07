@@ -6,8 +6,15 @@ export const colors = {
     heading: '#111719',
     subHeading: '#30384F',
     info: '#5B5B5E',
+    label: '#9796A1',
+    textInputBorder: '#EEEEEE',
+    textInputColor: '#111719',
+    placeholder: '#7D7B8A',
   },
   white: {
     main: '#FFFFFF',
+  },
+  error: {
+    main: '#B00020',
   },
 };
