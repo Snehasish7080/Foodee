@@ -13,7 +13,7 @@ import {Control, Controller} from 'react-hook-form';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 import {getFontSize} from '../../utils/theme/fontScale';
 import {colors} from '../../utils/theme/colors';
-import Apptext from '../AppText/Apptext';
+import AppText from '../AppText/AppText';
 
 type AppTextInputProps = TextInputProps & {
   name: string;
@@ -37,7 +37,7 @@ const AppTextInput: React.FC<AppTextInputProps> = ({
       control={control}
       render={({field: {onChange, onBlur, value}, fieldState: {error}}) => (
         <Fragment>
-          <Apptext
+          <AppText
             style={[
               {
                 fontSize: getFontSize(16),
@@ -48,7 +48,7 @@ const AppTextInput: React.FC<AppTextInputProps> = ({
               labelStyle,
             ]}>
             {lable}
-          </Apptext>
+          </AppText>
           <View
             style={[
               {

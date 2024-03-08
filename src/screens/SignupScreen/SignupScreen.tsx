@@ -5,10 +5,10 @@ import {styles} from './SignupScreenStyles';
 import {Controller, useController, useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Apptext from '../../atoms/AppText/Apptext';
 import AppTextInput from '../../atoms/AppTextInput/AppTextInput';
 import {verticalScale} from 'react-native-size-matters';
 import AppButton from '../../atoms/AppButton/AppButton';
+import AppText from '../../atoms/AppText/AppText';
 
 type signUpData = {
   fullName: string;
@@ -43,7 +43,7 @@ const SignupScreen: React.FC<UnAuthenticatedNavProps<'SignupScreen'>> = ({
 
   return (
     <View style={styles.mainContainer}>
-      <Apptext style={styles.heading}>Sign Up</Apptext>
+      <AppText style={styles.heading}>Sign Up</AppText>
       <View>
         <AppTextInput
           name={'fullName'}
@@ -59,7 +59,7 @@ const SignupScreen: React.FC<UnAuthenticatedNavProps<'SignupScreen'>> = ({
           control={control}
           lable="Email"
           labelStyle={{
-            marginTop: verticalScale(29),
+            marginTop: verticalScale(20),
           }}
           placeholder="Enter your email"
           keyboardType="email-address"
@@ -69,7 +69,7 @@ const SignupScreen: React.FC<UnAuthenticatedNavProps<'SignupScreen'>> = ({
           control={control}
           lable="Username"
           labelStyle={{
-            marginTop: verticalScale(29),
+            marginTop: verticalScale(20),
           }}
           placeholder="Enter your username"
         />
@@ -78,12 +78,26 @@ const SignupScreen: React.FC<UnAuthenticatedNavProps<'SignupScreen'>> = ({
           control={control}
           lable="Password"
           labelStyle={{
-            marginTop: verticalScale(29),
+            marginTop: verticalScale(20),
           }}
           placeholder="Enter your password"
         />
-        <View>
-          <AppButton>Continue</AppButton>
+        <View style={styles.btnContainer}>
+          <AppButton style={styles.btn}>Continue</AppButton>
+          <AppText style={styles.info}>
+            by clicking continue, you agree to our
+          </AppText>
+          <View style={styles.privacyContainer}>
+            <AppText style={styles.clickable}>Privacy Policy</AppText>
+            <AppText style={styles.info}> and </AppText>
+            <AppText style={styles.clickable}>Term and Conditions</AppText>
+          </View>
+          <View style={styles.loginContainer}>
+            <AppText style={styles.haveAccount}>
+              Already have an account?{' '}
+            </AppText>
+            <AppText style={styles.login}>Login</AppText>
+          </View>
         </View>
       </View>
     </View>

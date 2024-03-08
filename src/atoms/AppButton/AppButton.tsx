@@ -6,7 +6,7 @@ import {
   TextStyle,
 } from 'react-native';
 import React from 'react';
-import Apptext from '../AppText/Apptext';
+import AppText from '../AppText/AppText';
 import {scale} from 'react-native-size-matters';
 import {colors} from '../../utils/theme/colors';
 import {getFontSize} from '../../utils/theme/fontScale';
@@ -40,7 +40,7 @@ const AppButton = ({children, style, textStyle, ...props}: AppButtonProps) => {
         style,
       ]}
       {...props}>
-      <Apptext
+      <AppText
         style={[
           {
             color: colors.white.main,
@@ -50,7 +50,7 @@ const AppButton = ({children, style, textStyle, ...props}: AppButtonProps) => {
           textStyle,
         ]}>
         {children}
-      </Apptext>
+      </AppText>
     </Pressable>
   );
 };

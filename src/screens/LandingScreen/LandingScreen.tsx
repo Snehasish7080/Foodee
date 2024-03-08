@@ -1,9 +1,9 @@
 import {Image, View} from 'react-native';
 import React from 'react';
-import Apptext from '../../atoms/AppText/Apptext';
 import {styles} from './LandingScreenStyles';
 import AppButton from '../../atoms/AppButton/AppButton';
 import {UnAuthenticatedNavProps} from '../../navigations/UnAuthenticatedNavigation/UnAuthenticatedNavigationTypes';
+import AppText from '../../atoms/AppText/AppText';
 
 const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
   navigation,
@@ -15,9 +15,9 @@ const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
         style={styles.landingImage}
       />
       <View style={styles.contentContainer}>
-        <Apptext style={styles.heading}>Welcome to</Apptext>
-        <Apptext style={styles.name}>Foodee</Apptext>
-        <Apptext style={styles.subHeading}>Create your food journey</Apptext>
+        <AppText style={styles.heading}>Welcome to</AppText>
+        <AppText style={styles.name}>Foodee</AppText>
+        <AppText style={styles.subHeading}>Create your food journey</AppText>
         <View style={styles.btnContainer}>
           <AppButton
             onPress={() => {
@@ -26,8 +26,8 @@ const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
             Create Account
           </AppButton>
           <View style={styles.infoContainer}>
-            <Apptext style={styles.info}>Already have an account? </Apptext>
-            <Apptext style={styles.actionInfo}>Login</Apptext>
+            <AppText style={styles.info}>Already have an account? </AppText>
+            <AppText style={styles.actionInfo}>Login</AppText>
           </View>
         </View>
       </View>

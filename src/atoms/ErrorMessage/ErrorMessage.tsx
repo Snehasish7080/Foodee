@@ -2,7 +2,7 @@ import {View, Text, StyleProp, TextStyle} from 'react-native';
 import React from 'react';
 import {colors} from '../../utils/theme/colors';
 import {getFontSize} from '../../utils/theme/fontScale';
-import Apptext from '../AppText/Apptext';
+import AppText from '../AppText/AppText';
 
 type ErrorMessageProps = {
   children?: string;
@@ -10,7 +10,7 @@ type ErrorMessageProps = {
 };
 const ErrorMessage: React.FC<ErrorMessageProps> = ({style, children}) => {
   return (
-    <Apptext
+    <AppText
       style={[
         {
           color: colors.error.main,
@@ -19,7 +19,7 @@ const ErrorMessage: React.FC<ErrorMessageProps> = ({style, children}) => {
         style,
       ]}>
       {children}
-    </Apptext>
+    </AppText>
   );
 };
 

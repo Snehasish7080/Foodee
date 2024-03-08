@@ -3,8 +3,8 @@ import React from 'react';
 import {fontFamily} from '../../utils/theme/fontFamily';
 import {getFontSize} from '../../utils/theme/fontScale';
 
-type ApptextProps = TextProps;
-const Apptext = ({children, ...props}: ApptextProps) => {
+type AppTextProps = TextProps;
+const AppText = ({children, ...props}: AppTextProps) => {
   return (
     <Text
       style={[
@@ -20,4 +20,4 @@ const Apptext = ({children, ...props}: ApptextProps) => {
   );
 };
 
-export default Apptext;
+export default AppText;
