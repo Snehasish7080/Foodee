@@ -11,15 +11,26 @@ import {scale} from 'react-native-size-matters';
 import {colors} from '../../utils/theme/colors';
 import {getFontSize} from '../../utils/theme/fontScale';
 import {fontFamily} from '../../utils/theme/fontFamily';
+import Animated from 'react-native-reanimated';
 
 type AppButtonProps = PressableProps & {
   children: string;
   style?: StyleProp<ViewStyle>;
   textStyle?: StyleProp<TextStyle>;
+  enableSharedTransition?: boolean;
 };
-const AppButton = ({children, style, textStyle, ...props}: AppButtonProps) => {
+
+const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
+const AppButton = ({
+  children,
+  style,
+  textStyle,
+  enableSharedTransition = false,
+  ...props
+}: AppButtonProps) => {
   return (
-    <Pressable
+    <AnimatedPressable
+      sharedTransitionTag={enableSharedTransition ? 'transitionBtn' : undefined}
       style={[
         {
           width: scale(248),
@@ -46,12 +57,14 @@ const AppButton = ({children, style, textStyle, ...props}: AppButtonProps) => {
             color: colors.white.main,
             fontSize: getFontSize(15),
             fontFamily: fontFamily.poppinsSemiBold,
+            width: '100%',
+            textAlign: 'center',
           },
           textStyle,
         ]}>
         {children}
       </AppText>
-    </Pressable>
+    </AnimatedPressable>
   );
 };
 

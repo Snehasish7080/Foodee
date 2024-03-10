@@ -4,6 +4,7 @@ import {styles} from './LandingScreenStyles';
 import AppButton from '../../atoms/AppButton/AppButton';
 import {UnAuthenticatedNavProps} from '../../navigations/UnAuthenticatedNavigation/UnAuthenticatedNavigationTypes';
 import AppText from '../../atoms/AppText/AppText';
+import Animated from 'react-native-reanimated';
 
 const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
   navigation,
@@ -25,10 +26,12 @@ const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
             }}>
             Create Account
           </AppButton>
-          <View style={styles.infoContainer}>
+          <Animated.View
+            style={styles.infoContainer}
+            sharedTransitionTag="infoContainer">
             <AppText style={styles.info}>Already have an account? </AppText>
             <AppText style={styles.actionInfo}>Login</AppText>
-          </View>
+          </Animated.View>
         </View>
       </View>
     </View>
