@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {UnAuthenticatedRouteList} from './UnAuthenticatedNavigationTypes';
 import LandingScreen from '../../screens/LandingScreen/LandingScreen';
 import SignupScreen from '../../screens/SignupScreen/SignupScreen';
+import LoginScreen from '../../screens/LoginScreen/LoginScreen';
 
 const Stack = createNativeStackNavigator<UnAuthenticatedRouteList>();
 
@@ -18,6 +19,13 @@ const UnAuthenticatedNavigation = () => {
       <Stack.Screen
         name="SignupScreen"
         component={SignupScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
         options={{
           headerShown: false,
         }}

@@ -8,6 +8,20 @@ export const styles = ScaledSheet.create({
     backgroundColor: colors.white.main,
     flex: 1,
   },
+  titleContainer: {
+    alignItems: 'center',
+    marginTop: '35@vs',
+    marginBottom: '54@vs',
+  },
+  title: {
+    color: colors.primary.main,
+    fontFamily: fontFamily.poppinsSemiBold,
+    fontSize: getFontSize(36.41),
+  },
+  subTitle: {
+    color: colors.grey.subHeading,
+    fontSize: getFontSize(15),
+  },
   heading: {
     color: colors.grey.heading,
     fontSize: getFontSize(36),
@@ -16,15 +30,6 @@ export const styles = ScaledSheet.create({
   btnContainer: {
     alignItems: 'center',
     marginTop: '33@vs',
-  },
-  privacyContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  clickable: {
-    color: colors.primary.main,
-    fontSize: getFontSize(14),
-    fontFamily: fontFamily.poppinsMedium,
   },
   info: {
     fontSize: getFontSize(14),
@@ -46,5 +51,9 @@ export const styles = ScaledSheet.create({
   loginContainer: {
     flexDirection: 'row',
     marginTop: '12@vs',
+  },
+  forgetPassword: {
+    alignItems: 'center',
+    marginTop: '29@vs',
   },
 });

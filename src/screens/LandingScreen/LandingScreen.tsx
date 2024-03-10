@@ -1,4 +1,4 @@
-import {Image, View} from 'react-native';
+import {Image, Pressable, View} from 'react-native';
 import React from 'react';
 import {styles} from './LandingScreenStyles';
 import AppButton from '../../atoms/AppButton/AppButton';
@@ -26,11 +26,14 @@ const LandingScreen: React.FC<UnAuthenticatedNavProps<'LandingScreen'>> = ({
             }}>
             Create Account
           </AppButton>
-          <Animated.View
-            style={styles.infoContainer}
-            sharedTransitionTag="infoContainer">
+          <Animated.View style={styles.infoContainer}>
             <AppText style={styles.info}>Already have an account? </AppText>
-            <AppText style={styles.actionInfo}>Login</AppText>
+            <Pressable
+              onPress={() => {
+                navigation.navigate('LoginScreen');
+              }}>
+              <AppText style={styles.actionInfo}>Login</AppText>
+            </Pressable>
           </Animated.View>
         </View>
       </View>
