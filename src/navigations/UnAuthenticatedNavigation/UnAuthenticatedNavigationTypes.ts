@@ -4,7 +4,7 @@ export type UnAuthenticatedRouteList = {
   LandingScreen: undefined;
   LoginScreen: undefined;
   SignupScreen: undefined;
-  VerifyOtpScreen: undefined;
+  VerificationScreen: undefined;
 };
 
 export type UnAuthenticatedNavigationProp<

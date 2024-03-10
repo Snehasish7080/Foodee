@@ -39,14 +39,6 @@ const AppButton = ({
           backgroundColor: colors.primary.main,
           alignItems: 'center',
           justifyContent: 'center',
-          shadowColor: 'rgba(122, 129, 190, 0.6)',
-          shadowOffset: {
-            width: 0,
-            height: 10,
-          },
-          shadowOpacity: 1,
-          shadowRadius: 40,
-          elevation: 20,
         },
         style,
       ]}

@@ -79,7 +79,13 @@ const LoginScreen: React.FC<UnAuthenticatedNavProps<'LoginScreen'>> = ({
             <AppText style={styles.login}>Forget Password</AppText>
           </Pressable>
           <View style={styles.btnContainer}>
-            <AppButton style={styles.btn}>Continue</AppButton>
+            <AppButton
+              style={styles.btn}
+              onPress={() => {
+                navigation.navigate('VerificationScreen');
+              }}>
+              Login
+            </AppButton>
             <Animated.View style={styles.loginContainer}>
               <AppText style={styles.haveAccount}>
                 Don't have an account?{' '}
