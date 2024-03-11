@@ -90,7 +90,13 @@ const SignupScreen: React.FC<UnAuthenticatedNavProps<'SignupScreen'>> = ({
             placeholder="Enter your password"
           />
           <View style={styles.btnContainer}>
-            <AppButton style={styles.btn}>Continue</AppButton>
+            <AppButton
+              style={styles.btn}
+              onPress={() => {
+                navigation.navigate('VerificationScreen');
+              }}>
+              Continue
+            </AppButton>
             <AppText style={styles.info}>
               by clicking continue, you agree to our
             </AppText>
