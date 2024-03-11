@@ -10,6 +10,7 @@ import {scale, verticalScale} from 'react-native-size-matters';
 import AppButton from '../../atoms/AppButton/AppButton';
 import AppText from '../../atoms/AppText/AppText';
 import Animated from 'react-native-reanimated';
+import BackIcon from '../../atoms/BackIcon/BackIcon';
 
 type signUpData = {
   fullName: string;
@@ -44,11 +45,16 @@ const LoginScreen: React.FC<UnAuthenticatedNavProps<'LoginScreen'>> = ({
 
   return (
     <View style={styles.mainContainer}>
+      <View style={styles.header}>
+        <Pressable onPress={() => navigation.goBack()}>
+          <BackIcon />
+        </Pressable>
+      </View>
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           paddingVertical: verticalScale(20),
-          paddingHorizontal: scale(33),
+          paddingHorizontal: scale(24),
         }}>
         <View style={styles.titleContainer}>
           <AppText style={styles.title}>Foodee</AppText>

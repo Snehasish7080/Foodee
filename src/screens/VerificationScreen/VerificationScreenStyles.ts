@@ -8,13 +8,13 @@ export const styles = ScaledSheet.create({
     backgroundColor: colors.white.main,
     flex: 1,
     paddingVertical: '20@vs',
-    paddingHorizontal: '33@s',
+    paddingHorizontal: '24@s',
   },
   heading: {
     color: colors.grey.heading,
     fontSize: getFontSize(30),
     fontFamily: fontFamily.poppinsSemiBold,
-    marginTop: '62@vs',
+    marginTop: '36@vs',
   },
   subHeading: {
     color: colors.grey.label,
@@ -55,5 +55,8 @@ export const styles = ScaledSheet.create({
     borderRadius: 10,
     fontFamily: fontFamily.poppinsSemiBold,
     color: colors.primary.main,
+  },
+  header: {
+    paddingVertical: '26@vs',
   },
 });

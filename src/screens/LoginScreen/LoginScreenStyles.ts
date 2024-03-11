@@ -10,7 +10,6 @@ export const styles = ScaledSheet.create({
   },
   titleContainer: {
     alignItems: 'center',
-    marginTop: '35@vs',
     marginBottom: '54@vs',
   },
   title: {
@@ -55,5 +54,9 @@ export const styles = ScaledSheet.create({
   forgetPassword: {
     alignItems: 'center',
     marginTop: '29@vs',
+  },
+  header: {
+    paddingHorizontal: '24@s',
+    paddingVertical: '26@vs',
   },
 });

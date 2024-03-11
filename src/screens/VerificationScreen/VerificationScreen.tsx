@@ -4,12 +4,19 @@ import {UnAuthenticatedNavProps} from '../../navigations/UnAuthenticatedNavigati
 import {styles} from './VerificationScreenStyles';
 import AppText from '../../atoms/AppText/AppText';
 import OtpInput from '../../atoms/OtpInput/OtpInput';
+import BackIcon from '../../atoms/BackIcon/BackIcon';
 
 const VerificationScreen: React.FC<
   UnAuthenticatedNavProps<'VerificationScreen'>
 > = ({navigation}) => {
   return (
     <View style={styles.mainContainer}>
+      <View style={styles.header}>
+        <Pressable onPress={() => navigation.goBack()}>
+          <BackIcon />
+        </Pressable>
+      </View>
+
       <AppText style={styles.heading}>Verification Code</AppText>
       <AppText style={styles.subHeading}>
         Please type the verification code sent to prelookstudio@gmail.com
