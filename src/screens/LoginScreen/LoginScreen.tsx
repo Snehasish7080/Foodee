@@ -1,16 +1,17 @@
-import {Pressable, ScrollView, View} from 'react-native';
+import { Pressable, ScrollView, View } from 'react-native';
 import React from 'react';
-import {UnAuthenticatedNavProps} from '../../navigations/UnAuthenticatedNavigation/UnAuthenticatedNavigationTypes';
-import {styles} from './LoginScreenStyles';
-import {useForm} from 'react-hook-form';
-import {yupResolver} from '@hookform/resolvers/yup';
+import { UnAuthenticatedNavProps } from '../../navigations/UnAuthenticatedNavigation/UnAuthenticatedNavigationTypes';
+import { styles } from './LoginScreenStyles';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import AppTextInput from '../../atoms/AppTextInput/AppTextInput';
-import {scale, verticalScale} from 'react-native-size-matters';
+import { scale, verticalScale } from 'react-native-size-matters';
 import AppButton from '../../atoms/AppButton/AppButton';
 import AppText from '../../atoms/AppText/AppText';
 import Animated from 'react-native-reanimated';
 import BackIcon from '../../atoms/BackIcon/BackIcon';
+import { StackActions } from '@react-navigation/native';
 
 type signUpData = {
   fullName: string;
@@ -29,7 +30,7 @@ const schema = yup
 const LoginScreen: React.FC<UnAuthenticatedNavProps<'LoginScreen'>> = ({
   navigation,
 }) => {
-  const {control, handleSubmit, setValue} = useForm<signUpData>({
+  const { control, handleSubmit, setValue } = useForm<signUpData>({
     defaultValues: {
       fullName: '',
       email: '',
@@ -40,7 +41,7 @@ const LoginScreen: React.FC<UnAuthenticatedNavProps<'LoginScreen'>> = ({
   });
 
   const onSubmit = (data: signUpData) => {
-    console.log(data);
+    navigation.dispatch(StackActions.replace('Authenticated'));
   };
 
   return (
@@ -85,7 +86,13 @@ const LoginScreen: React.FC<UnAuthenticatedNavProps<'LoginScreen'>> = ({
             <AppText style={styles.login}>Forget Password</AppText>
           </Pressable>
           <View style={styles.btnContainer}>
-            <AppButton style={styles.btn}>Login</AppButton>
+            <AppButton
+              style={styles.btn}
+              onPress={() => {
+                navigation.dispatch(StackActions.replace('Authenticated'));
+              }}>
+              Login
+            </AppButton>
             <Animated.View style={styles.loginContainer}>
               <AppText style={styles.haveAccount}>
                 Don't have an account?{' '}
